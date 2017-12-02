@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+
+<html>
+
+
+<head>
+
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Oswald:700" rel="stylesheet">
+
+  <!-- font-awesome -->
+  <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+
+
+  <title>Riverside App</title>
+  <meta name="keywords" content="climbing, bouldering, training, shred gnar">
+  <meta name="description" content="Riverside App">
+
+  <!--THIS TURNS OFF ZOOM-->
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+  <link rel="stylesheet" href="temp/styles/styles.css">
+
+
+  <link rel="stylesheet" href="./assets/styles/animate.css">
+
+</head>
+
+
+
+
+
+<body>
+
+  <div class="resetOverlay"></div>
+
+  <div class="climb-saved-modal">
+    <i class="fa fa-hand-rock-o" aria-hidden="true"></i>
+    <div>CLIMB SAVED</div>
+  </div>
+
+  <div class="problem-info-sidebar">
+    <div id="problemInfoProblemName" class="problem-info-sidebar__text-block">
+      
+    </div>
+    <div id="problemInfoGrade" class="problem-info-sidebar__text-block">
+      
+    </div>
+    <div id="problemInfoAuthorName" class="problem-info-sidebar__text-block">
+      
+    </div>
+  </div>
+
+  <div class="inputHoldInfoOverlay">
+    <div class="formContainer">
+      <form class="submitForm" method="post">
+        <div class="submit-form--section">
+          <div class="submit-form--text">PROBLEM NAME</div>
+          <input class="problemNameInput" id="problemNameInput" type="text" name="problemName" value="">
+          
+        </div>
+        <div class="gradeSelect submit-form--section submit-form--section-grade">
+          GRADE
+          <select id="gradeSelect" name="grade">
+            <option value=""></option>
+            <option value="V1">V1</option>
+            <option value="V2">V2</option>
+            <option value="V3">V3</option>
+            <option value="V4">V4</option>
+            <option value="V5">V5</option>
+            <option value="V6">V6</option>
+            <option value="V7">V7</option>
+            <option value="V8">V8</option>
+            <option value="V9">V9</option>
+            <option value="V10">V10</option>
+            <option value="V11">V11</option>
+            <option value="V12">V12</option>
+            <option value="V13">V13</option>
+          </select>
+          <br>
+        </div>
+        <div class="submit-form--section">
+          <div class="submit-form--text">AUTHOR NAME</div>
+          <input id="authorNameInput" type="text" name="authorName" value="">
+        </div>
+        
+        <div class="submit-form--section">
+          <div class="modalButtonContainer">
+            <div id="saveHoldStatus" class="button-base button-base--save-holds-color submit-form__buttons">
+              SAVE CLIMB
+            </div>
+            <div id="modalCancelButton" class="button-base button-base--cancel-color submit-form__buttons">
+              CANCEL
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <div id="createInstructions" class="animated">
+    <div class="instruction-block">
+      <div class="touch-circle touch-circle-animate">
+
+      </div>
+      <img class="tap-icon" src="./assets/images/tap-icon.svg" alt="pinch icon">
+      <p class="instructions-text">TAP HOLDS TO CYCLE THROUGH COLORS</p>
+    </div>
+    <div class="instruction-block">
+      <div class="swipe-animate">
+        <img class="swipe-icon" src="./assets/images/tap-icon.svg" alt="pinch icon">
+      </div>
+      <p class="instructions-text">DRAG TO POSITION WALL</p>
+    </div>
+    <div class="instruction-block">
+      <div class="pinch-arrow-wrapper">
+        <i class="fa fa-arrows-h" aria-hidden="true"></i>
+      </div>
+      <img class="pinch-icon" src="./assets/images/pinch-icon.svg" alt="pinch icon">
+
+      <p class="instructions-text">USE TWO FINGERS TO ZOOM IN AND OUT</p> 
+    </div>
+    <div id="instructionOkButton" class="instruction-block--ok-button button-base button-base--ok-color">
+      OK
+    </div>
+
+
+  </div>
+
+
+  <div id="container" class="container">
+
+
+
+
+
+    <div id="imageContainer" class="imageContainer">
+      <img class="boardImg" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1090239/wallImage_lowerQual_scaledDown.jpg" />
+
+      <div id="clickParent">
+        <div id="clickBox1" class="clickBox"></div>
+        <div id="clickBox2" class="clickBox"></div>
+        <div id="clickBox3" class="clickBox"></div>
+        <div id="clickBox4" class="clickBox"></div>
+        <div id="clickBox5" class="clickBox"></div>
+        <div id="clickBox6" class="clickBox"></div>
+        <div id="clickBox7" class="clickBox"></div>
+        <div id="clickBox8" class="clickBox"></div>
+        <div id="clickBox9" class="clickBox"></div>
+        <div id="clickBox10" class="clickBox"></div>
+        <div id="clickBox11" class="clickBox"></div>
+        <div id="clickBox12" class="clickBox"></div>
+        <div id="clickBox13" class="clickBox"></div>
+        <div id="clickBox14" class="clickBox"></div>
+        <div id="clickBox15" class="clickBox"></div>
+        <div id="clickBox16" class="clickBox"></div>
+        <div id="clickBox17" class="clickBox"></div>
+        <div id="clickBox18" class="clickBox"></div>
+        <div id="clickBox19" class="clickBox"></div>
+        <div id="clickBox20" class="clickBox"></div>
+        <div id="clickBox21" class="clickBox"></div>
+        <div id="clickBox22" class="clickBox"></div>
+        <div id="clickBox23" class="clickBox"></div>
+        <div id="clickBox24" class="clickBox"></div>
+        <div id="clickBox25" class="clickBox"></div>
+        <div id="clickBox26" class="clickBox"></div>
+        <div id="clickBox27" class="clickBox"></div>
+        <div id="clickBox28" class="clickBox"></div>
+        <div id="clickBox29" class="clickBox"></div>
+        <div id="clickBox30" class="clickBox"></div>
+        <div id="clickBox31" class="clickBox"></div>
+        <div id="clickBox32" class="clickBox"></div>
+        <div id="clickBox33" class="clickBox"></div>
+        <div id="clickBox34" class="clickBox"></div>
+        <div id="clickBox35" class="clickBox"></div>
+        <div id="clickBox36" class="clickBox"></div>
+        <div id="clickBox37" class="clickBox"></div>
+        <div id="clickBox38" class="clickBox"></div>
+        <div id="clickBox39" class="clickBox"></div>
+        <div id="clickBox40" class="clickBox"></div>
+        <div id="clickBox41" class="clickBox"></div>
+        <div id="clickBox42" class="clickBox"></div>
+        <div id="clickBox43" class="clickBox"></div>
+        <div id="clickBox44" class="clickBox"></div>
+        <div id="clickBox45" class="clickBox"></div>
+        <div id="clickBox46" class="clickBox"></div>
+        <div id="clickBox47" class="clickBox"></div>
+        <div id="clickBox48" class="clickBox"></div>
+        <div id="clickBox49" class="clickBox"></div>
+        <div id="clickBox50" class="clickBox"></div>
+        <div id="clickBox51" class="clickBox"></div>
+        <div id="clickBox52" class="clickBox"></div>
+        <div id="clickBox53" class="clickBox"></div>
+        <div id="clickBox54" class="clickBox"></div>
+        <div id="clickBox55" class="clickBox"></div>
+        <div id="clickBox56" class="clickBox"></div>
+        <div id="clickBox57" class="clickBox"></div>
+        <div id="clickBox58" class="clickBox"></div>
+        <div id="clickBox59" class="clickBox"></div>
+        <div id="clickBox60" class="clickBox"></div>
+        <div id="clickBox61" class="clickBox"></div>
+        <div id="clickBox62" class="clickBox"></div>
+        <div id="clickBox63" class="clickBox"></div>
+        <div id="clickBox64" class="clickBox"></div>
+        <div id="clickBox65" class="clickBox"></div>
+        <div id="clickBox66" class="clickBox"></div>
+        <div id="clickBox67" class="clickBox"></div>
+        <div id="clickBox68" class="clickBox"></div>
+        <div id="clickBox69" class="clickBox"></div>
+        <div id="clickBox70" class="clickBox"></div>
+        <div id="clickBox71" class="clickBox"></div>
+        <div id="clickBox72" class="clickBox"></div>
+        <div id="clickBox73" class="clickBox"></div>
+        <div id="clickBox74" class="clickBox"></div>
+        <div id="clickBox75" class="clickBox"></div>
+        <div id="clickBox76" class="clickBox"></div>
+        <div id="clickBox77" class="clickBox"></div>
+        <div id="clickBox78" class="clickBox"></div>
+        <div id="clickBox79" class="clickBox"></div>
+        <div id="clickBox80" class="clickBox"></div>
+        <div id="clickBox81" class="clickBox"></div>
+        <div id="clickBox82" class="clickBox"></div>
+        <div id="clickBox83" class="clickBox"></div>
+        <div id="clickBox84" class="clickBox"></div>
+        <div id="clickBox85" class="clickBox"></div>
+        <div id="clickBox86" class="clickBox"></div>
+        <div id="clickBox87" class="clickBox"></div>
+        <div id="clickBox88" class="clickBox"></div>
+        <div id="clickBox89" class="clickBox"></div>
+        <div id="clickBox90" class="clickBox"></div>
+        <div id="clickBox91" class="clickBox"></div>
+        <div id="clickBox92" class="clickBox"></div>
+        <div id="clickBox93" class="clickBox"></div>
+        <div id="clickBox94" class="clickBox"></div>
+        <div id="clickBox95" class="clickBox"></div>
+        <div id="clickBox96" class="clickBox"></div>
+        <div id="clickBox97" class="clickBox"></div>
+        <div id="clickBox98" class="clickBox"></div>
+        <div id="clickBox99" class="clickBox"></div>
+        <div id="clickBox100" class="clickBox"></div>
+        <div id="clickBox101" class="clickBox"></div>
+        <div id="clickBox102" class="clickBox"></div>
+        <div id="clickBox103" class="clickBox"></div>
+        <div id="clickBox104" class="clickBox"></div>
+        <div id="clickBox105" class="clickBox"></div>
+        <div id="clickBox106" class="clickBox"></div>
+        <div id="clickBox107" class="clickBox"></div>
+        <div id="clickBox108" class="clickBox"></div>
+        <div id="clickBox109" class="clickBox"></div>
+        <div id="clickBox110" class="clickBox"></div>
+        <div id="clickBox111" class="clickBox"></div>
+        <div id="clickBox112" class="clickBox"></div>
+        <div id="clickBox113" class="clickBox"></div>
+        <div id="clickBox114" class="clickBox"></div>
+        <div id="clickBox115" class="clickBox"></div>
+        <div id="clickBox116" class="clickBox"></div>
+        <div id="clickBox117" class="clickBox"></div>
+        <div id="clickBox118" class="clickBox"></div>
+        <div id="clickBox119" class="clickBox"></div>
+        <div id="clickBox120" class="clickBox"></div>
+        <div id="clickBox121" class="clickBox"></div>
+        <div id="clickBox122" class="clickBox"></div>
+        <div id="clickBox123" class="clickBox"></div>
+        <div id="clickBox124" class="clickBox"></div>
+        <div id="clickBox125" class="clickBox"></div>
+        <div id="clickBox126" class="clickBox"></div>
+        <div id="clickBox127" class="clickBox"></div>
+        <div id="clickBox128" class="clickBox"></div>
+        <div id="clickBox129" class="clickBox"></div>
+        <div id="clickBox130" class="clickBox"></div>
+        <div id="clickBox131" class="clickBox"></div>
+        <div id="clickBox132" class="clickBox"></div>
+        <div id="clickBox133" class="clickBox"></div>
+        <div id="clickBox134" class="clickBox"></div>
+        <div id="clickBox135" class="clickBox"></div>
+        <div id="clickBox136" class="clickBox"></div>
+        <div id="clickBox137" class="clickBox"></div>
+        <div id="clickBox138" class="clickBox"></div>
+        <div id="clickBox139" class="clickBox"></div>
+        <div id="clickBox140" class="clickBox"></div>
+        <div id="clickBox141" class="clickBox"></div>
+        <div id="clickBox142" class="clickBox"></div>
+        <div id="clickBox143" class="clickBox"></div>
+        <div id="clickBox144" class="clickBox"></div>
+        <div id="clickBox145" class="clickBox"></div>
+        <div id="clickBox146" class="clickBox"></div>
+        <div id="clickBox147" class="clickBox"></div>
+        <div id="clickBox148" class="clickBox"></div>
+        <div id="clickBox149" class="clickBox"></div>
+        <div id="clickBox150" class="clickBox"></div>
+        <div id="clickBox151" class="clickBox"></div>
+        <div id="clickBox152" class="clickBox"></div>
+        <div id="clickBox153" class="clickBox"></div>
+        <div id="clickBox154" class="clickBox"></div>
+        <div id="clickBox155" class="clickBox"></div>
+        <div id="clickBox156" class="clickBox"></div>
+        <div id="clickBox157" class="clickBox"></div>
+        <div id="clickBox158" class="clickBox"></div>
+        <div id="clickBox159" class="clickBox"></div>
+        <div id="clickBox160" class="clickBox"></div>
+        <div id="clickBox161" class="clickBox"></div>
+        <div id="clickBox162" class="clickBox"></div>
+        <div id="clickBox163" class="clickBox"></div>
+        <div id="clickBox164" class="clickBox"></div>
+        <div id="clickBox165" class="clickBox"></div>
+        <div id="clickBox166" class="clickBox"></div>
+        <div id="clickBox167" class="clickBox"></div>
+        <div id="clickBox168" class="clickBox"></div>
+        <div id="clickBox169" class="clickBox"></div>
+        <div id="clickBox170" class="clickBox"></div>
+        <div id="clickBox171" class="clickBox"></div>
+        <div id="clickBox172" class="clickBox"></div>
+        <div id="clickBox173" class="clickBox"></div>
+        <div id="clickBox174" class="clickBox"></div>
+        <div id="clickBox175" class="clickBox"></div>
+        <div id="clickBox176" class="clickBox"></div>
+        <div id="clickBox177" class="clickBox"></div>
+        <div id="clickBox178" class="clickBox"></div>
+        <div id="clickBox179" class="clickBox"></div>
+        <div id="clickBox180" class="clickBox"></div>
+        <div id="clickBox181" class="clickBox"></div>
+        <div id="clickBox182" class="clickBox"></div>
+        <div id="clickBox183" class="clickBox"></div>
+        <div id="clickBox184" class="clickBox"></div>
+        <div id="clickBox185" class="clickBox"></div>
+        <div id="clickBox186" class="clickBox"></div>
+        <div id="clickBox187" class="clickBox"></div>
+        <div id="clickBox188" class="clickBox"></div>
+        <div id="clickBox189" class="clickBox"></div>
+        <div id="clickBox190" class="clickBox"></div>
+        <div id="clickBox191" class="clickBox"></div>
+        <div id="clickBox192" class="clickBox"></div>
+        <div id="clickBox193" class="clickBox"></div>
+        <div id="clickBox194" class="clickBox"></div>
+        <div id="clickBox195" class="clickBox"></div>
+        <div id="clickBox196" class="clickBox"></div>
+        <div id="clickBox197" class="clickBox"></div>
+        <div id="clickBox198" class="clickBox"></div>
+        <div id="clickBox199" class="clickBox"></div>
+        <div id="clickBox200" class="clickBox"></div>
+        <div id="clickBox201" class="clickBox"></div>
+        <div id="clickBox202" class="clickBox"></div>
+        <div id="clickBox203" class="clickBox"></div>
+        <div id="clickBox204" class="clickBox"></div>
+        <div id="clickBox205" class="clickBox"></div>
+        <div id="clickBox206" class="clickBox"></div>
+        <div id="clickBox207" class="clickBox"></div>
+        <div id="clickBox208" class="clickBox"></div>
+        <div id="clickBox209" class="clickBox"></div>
+        <div id="clickBox210" class="clickBox"></div>
+        <div id="clickBox211" class="clickBox"></div>
+        <div id="clickBox212" class="clickBox"></div>
+        <div id="clickBox213" class="clickBox"></div>
+        <div id="clickBox214" class="clickBox"></div>
+        <div id="clickBox215" class="clickBox"></div>
+        <div id="clickBox216" class="clickBox"></div>
+        <div id="clickBox217" class="clickBox"></div>
+        <div id="clickBox218" class="clickBox"></div>
+        <div id="clickBox219" class="clickBox"></div>
+        <div id="clickBox220" class="clickBox"></div>
+        <div id="clickBox221" class="clickBox"></div>
+        <div id="clickBox222" class="clickBox"></div>
+        <div id="clickBox223" class="clickBox"></div>
+        <div id="clickBox224" class="clickBox"></div>
+        <div id="clickBox225" class="clickBox"></div>
+        <div id="clickBox226" class="clickBox"></div>
+        <div id="clickBox227" class="clickBox"></div>
+        <div id="clickBox228" class="clickBox"></div>
+        <div id="clickBox229" class="clickBox"></div>
+        <div id="clickBox230" class="clickBox"></div>
+        <div id="clickBox231" class="clickBox"></div>
+        <div id="clickBox232" class="clickBox"></div>
+        <div id="clickBox233" class="clickBox"></div>
+        <div id="clickBox234" class="clickBox"></div>
+        <div id="clickBox235" class="clickBox"></div>
+        <div id="clickBox236" class="clickBox"></div>
+        <div id="clickBox237" class="clickBox"></div>
+        <div id="clickBox238" class="clickBox"></div>
+        <div id="clickBox239" class="clickBox"></div>
+        <div id="clickBox240" class="clickBox"></div>
+      </div>
+      <!-- end click parent div -->
+    </div>
+    <div class="metaMenuWrapper">
+      <span id="mainMenuContainer" class="mainMenuContainer">
+        <div id="createButton" class="button-base button-base--neutral-button-color">
+
+          <div>
+            CREATE
+          </div>
+        </div>
+        <div id="loadButton" class="button-base button-base--neutral-button-color">
+
+          <div>
+            LOAD
+          </div>
+        </div>
+      </span>
+      <span id="createMenuContainer" class="createMenuContainer">
+        <div id="backButton_Create" class="button-base button-base--neutral-button-color button-base--shrink button-base--l-r-padding-large backButton-width button-base--left-button">
+          <div>
+            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+          </div>
+        </div>
+
+        <div class="resetButtonContainer button-base button-base--reset-button-color">
+          <div class="button-base--l-r-padding">
+            <i class="fa fa-refresh" aria-hidden="true"></i>
+          </div>
+          <div class="button-base--l-r-padding">
+            RESET
+          </div>
+
+        </div>
+
+        <div id="triggerClimbInfoModal" class="saveButtonContainer button-base button-base--save-holds-color button-base--right-button">
+          <div class="button-base--l-r-padding">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+          </div>
+          <div class="button-base--l-r-padding">
+            SAVE
+          </div>
+        </div>
+
+      </span>
+      <span id="loadProblemMenuContainer" class="loadProblemMenuContainer">
+        <div id="backButton_Load" class="backButton_Load button-base button-base--neutral-button-color button-base--shrink backButton-width button-base--left-button">
+          <div>
+            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+          </div>
+        </div>
+
+        <!-- <div id="problemInfo" class="problemInfo ">
+          
+        </div> -->
+
+
+        <div class="loadProblemOptions button-base--neutral-button-color button-base--right-button">
+          <div>
+            SELECT
+          </div>
+          <div class="selectContainer">
+            <select onchange="loadSelectedProblem()" id="loadProblemSelect" name="loadProblem">
+
+            </select>
+          </div>
+        </div>
+
+      </span>
+    </div>
+
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  <footer>
+
+  </footer>
+
+
+  <!-- <script src="assets/scripts/touch-emulator.js"></script> -->
+  <script src="assets/scripts/hammer.js"></script>
+  <script src="assets/scripts/hammer-time.min.js"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script> -->
+  <script src="assets/scripts/index.js"></script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>
