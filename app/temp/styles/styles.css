@@ -21,8 +21,10 @@ body.open {
 
 html, body {margin:0;padding:0;height:100%;}
 
-body {
-	background-color: RGBA(45, 50, 56, 1.00);
+body { /* ff3.6+ */ /* safari4+,chrome */ /* safari5.1+,chrome10+ */ /* opera 11.10+ */ /* ie10+ */
+	background: linear-gradient(344deg, rgba(46,50,56,1) 0%, rgba(0,77,77,1) 100%); /* w3c */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#004D4D', endColorstr='#2E3238',GradientType=0 ); /* ie6-9 */
+
 	overflow: hidden;
 }
 
