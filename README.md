@@ -1,5 +1,5 @@
 # climbing-wall-app
-<img style="margin-left: auto; margin-right: auto;" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1090239/climbingwallapp.gif" width="500" height="500" />
+<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1090239/climbingwallapp.gif" width="500" height="500" />
 A web app for the climbers of High Point Riverside. Allows users to create and upload problems for the training wall.
 
 Remembering all of the routes I made up for training was starting to become difficult, so I decided to make it easier! 
